@@ -9,8 +9,8 @@
 
 
 <!-- The View Width of the Universe -->
-<canvas id="dimension" width="1000" height="1000"></canvas>
 <html>
+    <canvas id="dimension" width="1000" height="1000"></canvas>
 
 <body style="margin: 0;">
     <script>
@@ -26,7 +26,13 @@
         // A loop to render space
         for (x = 0; x < 1000; x++) {
             for (y = 0; y < 1000; y++) {
-                atom(x, y, "black");
+
+                matterIsFormulated = d > 500;
+
+                if (matterIsFormulated) {
+                    atom(x, y, "black");
+                }
+                
             }
         }
 
