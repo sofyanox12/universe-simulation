@@ -15,6 +15,10 @@
 
     universe = document.getElementById("dimension").getContext("2d");
 
-
+    // Atom placed on the space by a diameter size of 10^-15m
+    atom = function(x, y, space) {
+        universe.fillStyle = space;
+        universe.fillRect(x, y, (10^(-15)), (10^(-15)));
+    }
 
 </script>
