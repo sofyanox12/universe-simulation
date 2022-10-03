@@ -9,8 +9,7 @@
 
 
 <!-- The View Width of the Universe -->
-<html>
-    <canvas id="space" width="1000" height="1000"></canvas>
+<canvas id="space" width="1000" height="1000"></canvas>
 
 <body style="margin: 0;">
     <script>
@@ -31,18 +30,27 @@
                 vy = (y - 500);
 
                 // The equation of the universe (if Universe' space is spherical. NOTE : 2D monitor :P)
-                d = Math.sqrt((vx * vx) + (vy * vy));
+                for (tick = 1; tick < 100; tick++) {
 
-                matterIsFormulated = d > 200;
+                    // My equation on how big bang happen (Let's name it as "The Pujas Equation")
+                    d = (vx * vx) - (vy * vy) + vx;
+                    vy = 2 * (vx * vy) + vy;
+                    vx = d
 
-                if (matterIsFormulated) {
-                    atom(x, y, "black");
+                    matterIsFormulated = d > 200;
+
+                    if (matterIsFormulated) {
+                        atom(x, y, "rgb(" + (tick * 3) + "," + (tick * 2) + "," + (tick * 1) + ")");
+                        
+                        // What happen on the first second of the universe
+                        // NOTE : The ticks of time is in chaos back then.
+                        // Remove the "break;" below to see the seconds after the big bang.
+                        break; 
+                    }
                 }
-                
+
             }
         }
 
     </script>
 </body>
-
-</html>
