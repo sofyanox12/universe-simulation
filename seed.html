@@ -10,12 +10,12 @@
 
 <!-- The View Width of the Universe -->
 <html>
-    <canvas id="dimension" width="1000" height="1000"></canvas>
+    <canvas id="space" width="1000" height="1000"></canvas>
 
 <body style="margin: 0;">
     <script>
 
-        universe = document.getElementById("dimension").getContext("2d");
+        universe = document.getElementById("space").getContext("2d");
 
         // Atom placed on the space by a diameter size of 10^-15m
         atom = function (x, y, space) {
@@ -26,6 +26,12 @@
         // A loop to render space
         for (x = 0; x < 1000; x++) {
             for (y = 0; y < 1000; y++) {
+
+                vx = (x - 500);
+                vy = (y - 500);
+
+                // The equation of the universe (if Universe' space is spherical. NOTE : 2D monitor :P)
+                d = Math.sqrt((vx * vx) + (vy * vy));
 
                 matterIsFormulated = d > 500;
 
