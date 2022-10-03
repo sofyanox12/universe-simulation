@@ -10,15 +10,27 @@
 
 <!-- The View Width of the Universe -->
 <canvas id="dimension" width="1000" height="1000"></canvas>
+<html>
 
-<script>
+<body style="margin: 0;">
+    <script>
 
-    universe = document.getElementById("dimension").getContext("2d");
+        universe = document.getElementById("dimension").getContext("2d");
 
-    // Atom placed on the space by a diameter size of 10^-15m
-    atom = function(x, y, space) {
-        universe.fillStyle = space;
-        universe.fillRect(x, y, (10^(-15)), (10^(-15)));
-    }
+        // Atom placed on the space by a diameter size of 10^-15m
+        atom = function (x, y, space) {
+            universe.fillStyle = space;
+            universe.fillRect(x, y, (10 ^ (-15)), (10 ^ (-15)));
+        }
 
-</script>
+        // A loop to render space
+        for (x = 0; x < 1000; x++) {
+            for (y = 0; y < 1000; y++) {
+                atom(x, y, "black");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
